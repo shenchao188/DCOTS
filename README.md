@@ -95,14 +95,17 @@ The Big-M constants are computed internally based on the network topology to ens
 
 ## 3. Repository Structure & Artifacts
 
-**buses.csv:** Contains bus data with columns:
+The included IEEE 118-bus case is stored under
+`power_system_cases/118_bus_system/`.
+
+**power_system_cases/118_bus_system/buses.csv:** Contains bus data with columns:
 - `BUS_ID`: Bus identifier
 - `PD`: Demand (load) at the bus (MW)
 - `PMIN`: Minimum generation capacity (MW)
 - `PMAX`: Maximum generation capacity (MW)
 - `COST`: Marginal generation cost (\$/MWh)
 
-**branches.csv:** Contains transmission line data with columns:
+**power_system_cases/118_bus_system/branches.csv:** Contains transmission line data with columns:
 - `F_BUS`: From-bus ID
 - `T_BUS`: To-bus ID
 - `BR_X`: Line reactance (Ω), used to compute susceptance $b_l = 1/BR_X$

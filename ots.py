@@ -164,8 +164,9 @@ if __name__ == "__main__":
     script_dir = os.path.dirname(os.path.abspath(__file__))
     
     # Load data
-    buses_file = os.path.join(script_dir, "buses.csv")
-    branches_file = os.path.join(script_dir, "branches.csv")
+    case_dir = os.path.join(script_dir, "power_system_cases", "118_bus_system")
+    buses_file = os.path.join(case_dir, "buses.csv")
+    branches_file = os.path.join(case_dir, "branches.csv")
     buses, branches, _ = load_data(buses_file, branches_file)
     
     print("Solving Optimal Transmission Switching (OTS) Problem...")
