@@ -48,7 +48,7 @@ def build_incidence_matrix(buses, branches):
     return A.toarray()
 
 
-def ots_gurobi(buses_file, branches_file, baseMVA=100, time_limit=3600):
+def ots_gurobi(buses_file, branches_file, baseMVA=100, time_limit=3600, threads=1):
     """Solves the linearized DC Optimal Transmission Switching (DC-OTS) problem
     using Gurobi.
     
@@ -112,6 +112,7 @@ def ots_gurobi(buses_file, branches_file, baseMVA=100, time_limit=3600):
     # ========================================================================
     m = gp.Model("dc_ots")
     m.setParam("TimeLimit", time_limit)
+    m.setParam("Threads", threads)
     
     # ========================================================================
     # 3. Decision Variables
